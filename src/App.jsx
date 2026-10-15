@@ -1,5 +1,6 @@
 import "./App.css";
-import SimpleBarChart from "./components/SimpleBarChart";
+import Chart from "./components/Chart";
+import { metric } from "./constants/data";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
             Build Custom Charts using Recharts
           </h1>
         </div>
-        <SimpleBarChart />
+        <Chart metric={metric} />
       </section>
     </>
   );
