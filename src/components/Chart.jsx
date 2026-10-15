@@ -291,33 +291,12 @@ const Chart = ({ metric }) => {
   // Use first value as baseline
   const baseline = metric?.data?.[0]?.value;
 
-  // 1. Find raw max values from data (fallback to defaults if data is empty or 0)
-  const maxSessionData = Math.max(...data.map((d) => d.postCampaign || 0), 0);
-  const maxPctData = Math.max(...data.map((d) => d.percentageChange || 0), 0);
+  const y1Label = metric.y1_label;
 
-  const getNextPowerOf10 = (val) => {
-    if (val <= 0) {
-      return 10;
-    }
-    // Math.log10(43) ≈ 1.63 -> Math.floor is 1 -> 10^2 = 100
-    // Math.log10(544) ≈ 2.73 -> Math.floor is 2 -> 10^3 = 1000
-    const exponent = Math.floor(Math.log10(val)) + 1;
-    return Math.pow(10, exponent);
-  };
-
-  const maxY1 = getNextPowerOf10(maxSessionData);
-  const maxY2 = getNextPowerOf10(maxPctData);
-  const postCompaignData = data.map((d) => d.postCampaign);
+  const postCampaignData = data.map((point) => point.postCampaign);
   const percentageChangeData = data.map((d) => d.percentageChange);
 
-  // // 3. Generate exactly 6 ticks by splitting the max ceiling into 5 intervals
-  // const sessionTicks = Array.from({ length: 6 }, (_, i) =>
-  //   Number(((maxY1 / 5) * i).toFixed(1)),
-  // );
-  // const pctTicks = Array.from({ length: 6 }, (_, i) =>
-  //   Number(((maxY2 / 5) * i).toFixed(1)),
-  // );
-  const sessionTicks = generateTicks(postCompaignData);
+  const sessionTicks = generateTicks(postCampaignData);
   const pctTicks = generateTicks(percentageChangeData);
 
   return (
