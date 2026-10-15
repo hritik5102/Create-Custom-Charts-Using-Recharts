@@ -107,7 +107,7 @@ const CustomTooltip = ({ active, payload, label, color }) => {
 
   const containerClass = [
     "min-w-[180px] rounded-8 border border-gray-200",
-    "bg-white px-16 py-12 text-12 leading-[1.7]",
+    "bg-white px-8 py-4 text-sm leading-[1.7]",
     "shadow-[0_4px_20px_rgba(0,0,0,0.12)]",
   ].join(" ");
 
@@ -141,8 +141,8 @@ CustomTooltip.propTypes = {
 const CustomLegend = ({ baseline, color }) => (
   <div
     className={
-      "mt-12 flex flex-wrap items-center justify-center " +
-      "gap-24 text-12 text-gray-500"
+      "flex flex-wrap items-center justify-center " +
+      "gap-12 text-sm text-gray-500"
     }
   >
     {/* Pre-Campaign Baseline */}
