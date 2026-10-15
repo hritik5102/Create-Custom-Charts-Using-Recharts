@@ -337,13 +337,13 @@ const Chart = ({ metric }) => {
           <YAxis
             yAxisId="sessions"
             orientation="left"
-            domain={[0, maxY1]}
+            domain={[sessionTicks[0], sessionTicks.at(-1)]}
             ticks={sessionTicks}
             axisLine={{ stroke: "#A2A4A6", strokeWidth: 1.5 }}
             tick={{ fontSize: 12, fill: "#555555" }}
             width={40}
             label={{
-              value: metric.name,
+              value: y1Label,
               angle: -90,
               position: "insideLeft",
               offset: 0,
@@ -359,7 +359,7 @@ const Chart = ({ metric }) => {
           <YAxis
             yAxisId="pct"
             orientation="right"
-            domain={[0, maxY2]}
+            domain={[pctTicks[0], pctTicks.at(-1)]}
             ticks={pctTicks}
             tickFormatter={(v) => `${v}%`}
             axisLine={{ stroke: "#A2A4A6", strokeWidth: 1.5 }}
