@@ -375,6 +375,7 @@ const Chart = ({ metric }) => {
                 fontSize: 12,
                 fill: "#555555",
                 fontFamily: "Inter, sans-serif",
+                textAnchor: "middle",
               },
             }}
           />
