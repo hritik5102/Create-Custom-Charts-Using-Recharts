@@ -416,20 +416,21 @@ Chart.propTypes = {
    * Metric object containing name, label and data points for the chart
    */
   metric: PropTypes.shape({
-    name: PropTypes.string,
     label: PropTypes.string,
+    y1_label: PropTypes.string,
+    y2_label: PropTypes.string,
+    value: PropTypes.string,
+    percentage: PropTypes.string,
+    currency: PropTypes.bool,
+    delta_baseline_label: PropTypes.string,
     data: PropTypes.arrayOf(
       PropTypes.shape({
         day: PropTypes.string,
         value: PropTypes.number,
-        change: PropTypes.number,
+        change: PropTypes.string,
       }),
     ),
   }),
-  /**
-   * Attribute ID of the selected goal, used to determine which metric is selected in the chart
-   */
-  attributeId: PropTypes.string,
 };
 
 export default Chart;
