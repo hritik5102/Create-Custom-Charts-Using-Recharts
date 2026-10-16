@@ -1,4 +1,4 @@
-# Build Custom Chart Using React
+# Build Custom Charts using Recharts
 
 <img src="public/image.png">
 
