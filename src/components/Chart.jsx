@@ -146,7 +146,7 @@ const CustomLegend = ({ baseline, color }) => (
     }
   >
     {/* Pre-Campaign Baseline */}
-    <div className="flex items-center gap-8">
+    <div className="flex items-center gap-4">
       <svg width="12" height="12">
         <rect width="12" height="12" rx="2" className="fill-gray-500" />
       </svg>
@@ -154,7 +154,7 @@ const CustomLegend = ({ baseline, color }) => (
     </div>
 
     {/* Post-Campaign */}
-    <div className="flex items-center gap-8">
+    <div className="flex items-center gap-4">
       <svg width="12" height="12">
         <rect width="12" height="12" rx="2" className={color.FILL} />
       </svg>
@@ -162,7 +162,7 @@ const CustomLegend = ({ baseline, color }) => (
     </div>
 
     {/* % Change */}
-    <div className="flex items-center gap-8">
+    <div className="flex items-center gap-4">
       <svg width="32" height="14">
         <line
           x1="0"
@@ -300,14 +300,9 @@ const Chart = ({ metric }) => {
   const pctTicks = generateTicks(percentageChangeData);
 
   return (
-    <div
-      className={
-        "rounded-lg mb-6 flex w-full flex-col gap-1 bg-white " +
-        "gap-4 rounded-[6px] border border-solid border-gray-200 p-16"
-      }
-    >
+    <div className="flex w-full flex-col gap-4 rounded-lg border border-gray-200 bg-white p-8">
       {/* Header */}
-      <div className="mb-24 flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <h2 className="text-19 font-bold m-0 text-gray-900">{metric?.label}</h2>
       </div>
 
